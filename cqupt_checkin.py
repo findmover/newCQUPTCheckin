@@ -698,7 +698,7 @@ try:
     main()
 except Exception as e:
     if str(e) == "今日已打卡,不再打卡,脚本退出":
-        send_notification("今日已打卡", "今日已打卡,不再打卡,脚本退出"+USERNAME+LONGITUDE+LATITUDE)
+        send_notification("今日已打卡", "今日已打卡,不再打卡,脚本退出"+"打卡位置经纬度为："+checkin_data['LONGITUDE']+","+checkin_data['LATITUDE'])
         sys.exit(0)
     else:
         send_notification("打卡失败", str(e))
