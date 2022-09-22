@@ -698,11 +698,11 @@ try:
     main()
 except Exception as e:
     if str(e) == "今日已打卡,不再打卡,脚本退出":
-        send_notification("今日已打卡"+checkin_data,"今日已打卡,不再打卡,脚本退出"+checkin_data)
+        send_notification("今日已打卡","今日已打卡,不再打卡,脚本退出"+checkin_data)
         sys.exit(0)
     else:
         send_notification("打卡失败", str(e))
         sys.exit(1)
 
-send_notification("打卡成功", "打卡成功")
+send_notification("打卡成功", "打卡成功"+checkin_data)
 sys.exit(0)
