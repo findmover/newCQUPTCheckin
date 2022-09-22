@@ -697,15 +697,11 @@ def send_notification(title, content):
 try:
     main()
 except Exception as e:
-    for i in checkin_data:
-        str1=i+" "+checkin_data[i]
     if str(e) == "今日已打卡,不再打卡,脚本退出":
-        send_notification("今日已打卡","今日已打卡,不再打卡,脚本退出"+str1)
+        send_notification("今日已打卡","今日已打卡,不再打卡,脚本退出")
         sys.exit(0)
     else:
         send_notification("打卡失败", str(e))
         sys.exit(1)
-for i in checkin_data:
-    str2=i+" "+checkin_data[i]
-send_notification("打卡成功", "打卡成功"+str2)
+send_notification("打卡成功", "打卡成功")
 sys.exit(0)
